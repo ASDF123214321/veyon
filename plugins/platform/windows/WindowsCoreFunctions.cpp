@@ -136,6 +136,7 @@ void WindowsCoreFunctions::reboot()
 void WindowsCoreFunctions::powerDown( bool installUpdates )
 {
 	enablePrivilege( SE_SHUTDOWN_NAME, true );
+	system("c:\\windows\\system32\\shutdown /a ");
 	InitiateShutdown( nullptr, nullptr, 0,
 					  ShutdownFlags | SHUTDOWN_POWEROFF | ( installUpdates ? SHUTDOWN_INSTALL_UPDATES : 0 ),
 					  ShutdownReason );
